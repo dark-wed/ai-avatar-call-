@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Avatar Call</title>
+<style>
+body{
+background:#111;
+color:white;
+text-align:center;
+font-family:Arial;
+}
+video{
+width:40%;
+margin:10px;
+border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>AI Avatar Video Call</h1>
+
+<video id="localVideo" autoplay muted></video>
+
+<script>
+navigator.mediaDevices.getUserMedia({
+video:true,
+audio:true
+})
+.then(stream=>{
+document.getElementById("localVideo").srcObject=stream
+})
+.catch(()=>{
+alert("Camera not allowed")
+})
+</script>
+
+</body>
+</html>
